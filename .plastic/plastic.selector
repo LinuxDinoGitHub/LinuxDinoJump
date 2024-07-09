@@ -1,0 +1,4 @@
+repository "LinuxDinoJUMP!@LinuxDino@cloud"
+  path "/"
+    br "/main"
+    co "/main"
