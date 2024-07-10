@@ -845,6 +845,7 @@ MonoBehaviour:
   score: 0
   scoreDisplay: {fileID: 430391445}
   gameOverScene: {fileID: 2067399579}
+  over: 0
 --- !u!4 &1280770288
 Transform:
   m_ObjectHideFlags: 0
@@ -1256,6 +1257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 2742147358001219447, guid: 1eb7a3d1f2b7d4a47b69556740323446, type: 3}
   spawnRate: 2
+  logicscript: {fileID: 1280770287}
 --- !u!4 &2036431012
 Transform:
   m_ObjectHideFlags: 0

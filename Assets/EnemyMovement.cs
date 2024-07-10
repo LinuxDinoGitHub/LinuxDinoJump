@@ -16,15 +16,19 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += (Vector3.left * movespeed) * Time.deltaTime;
-        if (transform.position.x < -15)
+        if (!logicscript.over)
         {
-            Debug.Log("Deleted enemy");
-            Destroy(gameObject);
+            transform.position += (Vector3.left * movespeed) * Time.deltaTime;
+            if (transform.position.x < -15)
+            {
+                Debug.Log("Deleted enemy");
+                Destroy(gameObject);
+            }
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         logicscript.gameOver();
+        logicscript.over = true;
     }
 }
