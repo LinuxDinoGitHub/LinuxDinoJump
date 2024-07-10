@@ -17,7 +17,10 @@ public class DinoScript : MonoBehaviour
     {
         if (Input.anyKey)
         {
-            DinoBody.velocity = Vector2.up * jumpHeight;
+            if (DinoBody.position.y <= -1.1)
+            {
+                DinoBody.velocity = Vector2.up * jumpHeight;
+            }
         }
     }
 }
