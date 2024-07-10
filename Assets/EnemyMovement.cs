@@ -5,11 +5,12 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public int movespeed;
-    public float spawnRate = 2;
     private float timer = 0;
+    public Logic logicscript;
     // Start is called before the first frame update
     void Start()
     {
+        logicscript = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic>();
     }
 
     // Update is called once per frame
@@ -21,5 +22,9 @@ public class EnemyMovement : MonoBehaviour
             Debug.Log("Deleted enemy");
             Destroy(gameObject);
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        logicscript.gameOver();
     }
 }
