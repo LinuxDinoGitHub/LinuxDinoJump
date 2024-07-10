@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public int movespeed;
     private float timer = 0;
+    private Vector3 angles = Vector3.zero;
     public Logic logicscript;
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!logicscript.over)
         {
+            gameObject.transform.eulerAngles = angles;
             transform.position += (Vector3.left * movespeed) * Time.deltaTime;
             if (transform.position.x < -15)
             {

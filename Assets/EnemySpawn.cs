@@ -6,13 +6,20 @@ using UnityEngine.UIElements;
 
 public class EnemySpawn : MonoBehaviour
 {
-    public GameObject enemy;
+    public List<GameObject> prefabList = new List<GameObject>();
+    public GameObject enemy1;
+    public GameObject enemy2;
+    public GameObject enemy3;
     public float spawnRate = 2;
     private float timer = 0;
+    public float offsety = 1.4f;
     public Logic logicscript;
     // Start is called before the first frame update
     void Start()
     {
+        prefabList.Add(enemy1);
+        prefabList.Add(enemy2);
+        prefabList.Add(enemy3);
         spawnEnemy();
     }
 
@@ -36,6 +43,15 @@ public class EnemySpawn : MonoBehaviour
     }
     void spawnEnemy()
     {
-        Instantiate(enemy, transform.position, transform.rotation);
+        int prefabIndex = UnityEngine.Random.Range(0, prefabList.Count);
+        if (prefabIndex != 2)
+        {
+            Instantiate(prefabList[prefabIndex], transform.position, transform.rotation);
+        }
+        else
+        {
+            Vector3 vector3 = transform.position;
+            Instantiate(prefabList[prefabIndex], new Vector3(vector3.x, offsety * -1, vector3.z), transform.rotation);
+        }
     }
 }
