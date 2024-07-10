@@ -50,4 +50,8 @@ public class Logic : MonoBehaviour
         }
         over = true;
     }
+    public void PlayGame()
+    {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Sample Scene"));
+    }
 }

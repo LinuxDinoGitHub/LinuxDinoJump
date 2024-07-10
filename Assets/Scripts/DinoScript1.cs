@@ -4,16 +4,16 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class DinoScript : MonoBehaviour
+public class DinoScript1 : MonoBehaviour
 {
     public Rigidbody2D DinoBody;
     public int jumpHeight;
     private Vector3 angles = Vector3.zero;
-    private Logic logicscript;
+    public Logic logicscript;
     // Start is called before the first frame update
     void Start()
     {
-        logicscript = GameObject.FindGameObjectWithTag("Logic").GetComponent<Logic>();
+
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class DinoScript : MonoBehaviour
         {
             gameObject.transform.eulerAngles = angles;
             Vector3 temp = gameObject.transform.position;
-            temp.x = -7;
+            temp.x = -4;
             gameObject.transform.position = temp;
             if (Input.anyKey)
             {
