@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Scrolling : MonoBehaviour
 {
+    public SpriteRenderer floor;
     private Material _material;
+    public Logic logicscript;
     public float speed;
-    private float currentscroll = 0f;
+    public float currentscroll;
     void Start()
     {
-        _material = GetComponent<SpriteRenderer>().material;
+        currentscroll = 0;
+        _material = floor.material;
     }
 
     void Update()
     {
-        currentscroll += speed * Time.deltaTime;
-        _material.mainTextureOffset = new Vector2(currentscroll, 0);
+        if (!logicscript.over){
+            currentscroll += speed * Time.deltaTime;
+            _material.mainTextureOffset = new Vector2(currentscroll, 0);
+        }
     }
 
 }

@@ -973,7 +973,6 @@ GameObject:
   - component: {fileID: 1551915296}
   - component: {fileID: 1551915295}
   - component: {fileID: 1551915299}
-  - component: {fileID: 1551915298}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1046,7 +1045,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1086,7 +1085,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551915294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.18}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1097,14 +1096,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.07, y: -5.03}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &1551915298
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551915294}
-  m_CullTransparentMesh: 1
 --- !u!114 &1551915299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1117,7 +1108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a2d13d53a740947b542a29dd8e23cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  floor: {fileID: 1551915296}
+  logicscript: {fileID: 1280770287}
+  speed: 0.6
+  currentscroll: 0
 --- !u!1 &2036431010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1769699136133850640, guid: 93955e8b0ead50342b28850a3e2903ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.16
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: 1769699136133850640, guid: 93955e8b0ead50342b28850a3e2903ea, type: 3}
       propertyPath: m_LocalRotation.w
