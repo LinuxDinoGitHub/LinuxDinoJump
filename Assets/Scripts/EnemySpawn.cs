@@ -12,7 +12,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject enemy3;
     public float spawnRate = 2;
     private float timer = 0;
-    public float offsety = 1.43f;
+    public float offsety;
     public Logic logicscript;
     // Start is called before the first frame update
     void Start()
