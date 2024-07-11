@@ -10,10 +10,11 @@ public class DinoScript : MonoBehaviour
     public int jumpHeight;
     private Vector3 angles = Vector3.zero;
     public Logic logicscript;
+    public AudioManager audiomanager;
     // Start is called before the first frame update
     void Start()
     {
-
+        audiomanager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class DinoScript : MonoBehaviour
             {
                 if (DinoBody.position.y <= -1.1)
                 {
+                    audiomanager.playSFX(audiomanager.jump);
                     DinoBody.velocity = Vector2.up * jumpHeight;
                 }
             }

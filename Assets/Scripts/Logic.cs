@@ -15,10 +15,12 @@ public class Logic : MonoBehaviour
     public GameObject gameOverScene;
     public Text highScoreIndicator;
     public bool over = false;
+    public AudioManager audiomanager;
 
     // Start is called before the first frame update
     void Start()
     {
+        audiomanager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         over = false;
         try
         {
@@ -62,10 +64,14 @@ public class Logic : MonoBehaviour
             highScoreIndicator.gameObject.SetActive(false);
             if (score > highscore)
             {
+                audiomanager.playSFX(audiomanager.win);
                 highscore = score;
                 highScoreDisplay.text = "HI " + highscore.ToString("D6");
                 PlayerPrefs.SetInt("highScore", highscore);
                 highScoreIndicator.gameObject.SetActive(true);
+            }
+            else {
+                audiomanager.playSFX(audiomanager.lose);
             }
             over = true;
         }

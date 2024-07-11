@@ -16,14 +16,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip jump;
     void Start()
     {
-        /*int index = Random.Range(0, 3);
-        switch (index){
-            case 0:
-                musicSource.clip = Background;
-        }*/
-
-        musicSource.clip = Background;
-        musicSource.Play();
     }
 
     // Update is called once per frame
