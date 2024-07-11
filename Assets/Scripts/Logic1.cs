@@ -7,10 +7,10 @@ public class Logic1 : MonoBehaviour
 {
     private void Start()
     {
-        SceneManager.LoadScene(0);
     }
     public void PlayGame()
     {
+        Debug.Log("Switching scenes");
         SceneManager.LoadScene(1);
     }
 }
