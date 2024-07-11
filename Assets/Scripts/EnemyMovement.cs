@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public int movespeed;
-    private float timer = 0;
     private Vector3 angles = Vector3.zero;
     public Logic logicscript;
     // Start is called before the first frame update
