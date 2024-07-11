@@ -11,6 +11,7 @@ public class DinoScript : MonoBehaviour
     private Vector3 angles = Vector3.zero;
     public Logic logicscript;
     public AudioManager audiomanager;
+    private bool Jumpable;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +29,17 @@ public class DinoScript : MonoBehaviour
             gameObject.transform.position = temp;
             if (Input.anyKey)
             {
-                if (DinoBody.position.y <= -1.1)
+                if (Jumpable)
                 {
                     audiomanager.playSFX(audiomanager.jump);
                     DinoBody.velocity = Vector2.up * jumpHeight;
+                    Jumpable = false;
                 }
             }
         }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Jumpable = true;
     }
 }
